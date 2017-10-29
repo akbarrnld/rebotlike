@@ -55,6 +55,7 @@ setTime = {}
 setTime = wait2['setTime']
 
 
+
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
@@ -72,8 +73,7 @@ exec(base64.b64decode(dapuy))
 def NOTIFIED_READ_MESSAGE(op):
     try:
         if op.param1 in wait2['readPoint']:
-            Name = cl.getContact(op.param2).displayName
-            if Name in wait2['readMember'][op.param1]:
+            Name = cl.getContact(op.param2).displayName            if Name in wait2['readMember'][op.param1]:
                 pass
             else:
                 wait2['readMember'][op.param1] += "\n・" + Name
@@ -94,7 +94,8 @@ def bot(op):
                 if (wait["message"] in [""," ","\n",None]):
                     pass
                 else:
-                    cl.sendText(op.param1,str(wait["message"]))        if op.type == 13:
+                    cl.sendText(op.param1,str(wait["message"]))        
+        if op.type == 13:
                 if op.param3 in mid:
                     if op.param2 in Amid:
                         G = ki.getGroup(op.param1)
