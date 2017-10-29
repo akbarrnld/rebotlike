@@ -8,7 +8,7 @@ import time,random,sys,json,codecs,threading,glob,re,base64
 cl = LINETCR.LINE()
 cl.login(qr=True)
 cl.loginResult()
-
+,
 ki = kk = kc = cl 
 
 print "login success"
@@ -55,7 +55,6 @@ setTime = {}
 setTime = wait2['setTime']
 
 
-
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
@@ -66,21 +65,38 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
     messageReq[to] += 1
 
 #---------------------------[AutoLike-nya]---------------------------#
-dapuy = "I1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KZGVmIGF1dG9saWtlKCk6I1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KICAgICBmb3IgenggaW4gcmFuZ2UoMCwxMDApOiNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiAgICAgICAgaGFzaWwgPSBjbC5hY3Rpdml0eShsaW1pdD0xMDApI1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KICAgICAgICBpZiBoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWydwb3N0SW5mbyddWydsaWtlZCddID09IEZhbHNlOiNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiAgICAgICAgICB0cnk6ICAgICNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiAgICAgICAgICAgIGNsLmxpa2UoaGFzaWxbJ3Jlc3VsdCddWydwb3N0cyddW3p4XVsndXNlckluZm8nXVsnbWlkJ10saGFzaWxbJ3Jlc3VsdCddWydwb3N0cyddW3p4XVsncG9zdEluZm8nXVsncG9zdElkJ10sbGlrZVR5cGU9MTAwMikjVG9sb25nIEtlcmphc2FtYS1ueWEgdW50dWsgdGlkYWsgbWVydWJhaCBrb21lbiBzZWNhcmEga2VzZWx1cnVoYW4gdGVydXRhbWEgcGFkYSBVUkwgQ2hhbm5lbCBZb3V0dWJlIFNheWEsIGthbGF1IG1hdSBkaXRhbWJhaCBkaWtpdCBzaWxhaGthbgogICAgICAgICAgICBjbC5jb21tZW50KGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3VzZXJJbmZvJ11bJ21pZCddLGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3Bvc3RJbmZvJ11bJ3Bvc3RJZCddLCJBdXRvbGlrZSBCeSBGYXJ6YWluIC0gekZ6XG5cblN1YnNjcmliZSBDaGFubmVsIFNheWEgeWFrIGthbGF1IG1hdSBiaXNhIGtheWFrIGdpbmlcbmh0dHBzOi8veW91dHViZS5jb20vYy96Zno0OCIpI1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KICAgICAgICAgICAgcHJpbnQgIkxpa2UiI1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KICAgICAgICAgIGV4Y2VwdDojVG9sb25nIEtlcmphc2FtYS1ueWEgdW50dWsgdGlkYWsgbWVydWJhaCBrb21lbiBzZWNhcmEga2VzZWx1cnVoYW4gdGVydXRhbWEgcGFkYSBVUkwgQ2hhbm5lbCBZb3V0dWJlIFNheWEsIGthbGF1IG1hdSBkaXRhbWJhaCBkaWtpdCBzaWxhaGthbgogICAgICAgICAgICBwYXNzI1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KICAgICAgICBlbHNlOiNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiAgICAgICAgICAgIHByaW50ICJBbHJlYWR5IExpa2VkIiNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiAgICAgdGltZS5zbGVlcCg1MDApI1RvbG9uZyBLZXJqYXNhbWEtbnlhIHVudHVrIHRpZGFrIG1lcnViYWgga29tZW4gc2VjYXJhIGtlc2VsdXJ1aGFuIHRlcnV0YW1hIHBhZGEgVVJMIENoYW5uZWwgWW91dHViZSBTYXlhLCBrYWxhdSBtYXUgZGl0YW1iYWggZGlraXQgc2lsYWhrYW4KdGhyZWFkMiA9IHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PWF1dG9saWtlKSNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCnRocmVhZDIuZGFlbW9uID0gVHJ1ZSNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCnRocmVhZDIuc3RhcnQoKSNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2FuCiNUb2xvbmcgS2VyamFzYW1hLW55YSB1bnR1ayB0aWRhayBtZXJ1YmFoIGtvbWVuIHNlY2FyYSBrZXNlbHVydWhhbiB0ZXJ1dGFtYSBwYWRhIFVSTCBDaGFubmVsIFlvdXR1YmUgU2F5YSwga2FsYXUgbWF1IGRpdGFtYmFoIGRpa2l0IHNpbGFoa2Fu"
-exec(base64.b64decode(dapuy))
+def autolike():
+     for zx in range(0,100):
+        hasil = cl.activity(limit=100)
+        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
+          try:    
+            like_function = "ICAgICAgICAgICAgY2wubGlrZShoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWyd1c2VySW5mbyddWydtaWQnXSxoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWydwb3N0SW5mbyddWydwb3N0SWQnXSxsaWtlVHlwZT0xMDAyKQogICAgICAgICAgICBjbC5jb21tZW50KGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3VzZXJJbmZvJ11bJ21pZCddLGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3Bvc3RJbmZvJ11bJ3Bvc3RJZCddLCJBdXRvbGlrZSBCeSBGYXJ6YWluIC0gekZ6XG5cblN1YnNjcmliZSBDaGFubmVsIFNheWEgeWFrIGthbGF1IG1hdSBiaXNhIGtheWFrIGdpbmlcbmh0dHBzOi8veW91dHViZS5jb20vYy96Zno0OCIp"
+            exec(base64.b64decode(like_function))
+            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like By MKHADAFFY\n Instagram @mkhadaffy18")
+            print "Like"
+          except:
+            pass
+        else:
+            print "Already Liked"
+     time.sleep(500)
+thread2 = threading.Thread(target=autolike)
+thread2.daemon = True
+thread2.start()
 #---------------------------[AutoLike-nya]---------------------------#
 
 def NOTIFIED_READ_MESSAGE(op):
     try:
         if op.param1 in wait2['readPoint']:
-            Name = cl.getContact(op.param2).displayName            if Name in wait2['readMember'][op.param1]:
+            Name = cl.getContact(op.param2).displayName
+            if Name in wait2['readMember'][op.param1]:
                 pass
             else:
                 wait2['readMember'][op.param1] += "\n・" + Name
                 wait2['ROM'][op.param1][op.param2] = "・" + Name
         else:
             pass
-    except:        pass
+    except:
+        pass
 
 #-------------------------[Jangan Dihapus]------------------------#
 
@@ -94,7 +110,7 @@ def bot(op):
                 if (wait["message"] in [""," ","\n",None]):
                     pass
                 else:
-                    cl.sendText(op.param1,str(wait["message"]))        
+                    cl.sendText(op.param1,str(wait["message"]))
         if op.type == 13:
                 if op.param3 in mid:
                     if op.param2 in Amid:
@@ -105,7 +121,7 @@ def bot(op):
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1
+                        Ticket = ki.reissueGroupTicket(op.param1)
 
                 if op.param3 in Amid:
                     if op.param2 in Bmid:
@@ -140,14 +156,14 @@ def bot(op):
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
 
-#----------------------[Masukin Semua SC Yang Antum Pengen Disini]----------------------#
+#----------------------[Masukin Semua SC Yang Ente Pengen Disini]----------------------#
         if op.type == 25:
             msg = op.message
             if msg.text in ["Speed","speed"]:
                     start = time.time()
                     elapsed_time = time.time() - start
                     cl.sendText(msg.to, "%sseconds" % (elapsed_time))
-#----------------------[Masukin Semua SC Yang Antum Pengen Disini]----------------------#
+#----------------------[Masukin Semua SC Yang Ente Pengen Disini]----------------------#
 
         if op.type == 59:
             print op
