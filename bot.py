@@ -8,7 +8,7 @@ import time,random,sys,json,codecs,threading,glob,re,base64
 cl = LINETCR.LINE()
 cl.login(qr=True)
 cl.loginResult()
-,
+
 ki = kk = kc = cl 
 
 print "login success"
