@@ -28,7 +28,7 @@ wait = {
     'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
     'timeline':True,
-    'autoAdd':True,
+s    'autoAdd':True,
     'message':"Thanks for add me, instagram @mkhadaffy18",
     "lang":"JP",
     "comment":"Thanks for add me, instagram @mkhadaffy18",
@@ -72,7 +72,7 @@ def autolike():
           try:    
             like_function = "ICAgICAgICAgICAgY2wubGlrZShoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWyd1c2VySW5mbyddWydtaWQnXSxoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWydwb3N0SW5mbyddWydwb3N0SWQnXSxsaWtlVHlwZT0xMDAyKQogICAgICAgICAgICBjbC5jb21tZW50KGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3VzZXJJbmZvJ11bJ21pZCddLGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3Bvc3RJbmZvJ11bJ3Bvc3RJZCddLCJBdXRvbGlrZSBCeSBGYXJ6YWluIC0gekZ6XG5cblN1YnNjcmliZSBDaGFubmVsIFNheWEgeWFrIGthbGF1IG1hdSBiaXNhIGtheWFrIGdpbmlcbmh0dHBzOi8veW91dHViZS5jb20vYy96Zno0OCIp"
             exec(base64.b64decode(like_function))
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like By MKHADAFFY\n Instagram @mkhadaffy18")
+            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like By MKHADAFFY\nInstagram @mkhadaffy18\nMau Auto Like? https://youtu.be/VyervjxFN9g")
             print "Like"
           except:
             pass
