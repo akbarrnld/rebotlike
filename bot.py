@@ -28,7 +28,7 @@ wait = {
     'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
     'timeline':True,
-s    'autoAdd':True,
+    'autoAdd':True,
     'message':"Thanks for add me, instagram @mkhadaffy18",
     "lang":"JP",
     "comment":"Thanks for add me, instagram @mkhadaffy18",
