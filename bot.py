@@ -66,22 +66,42 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 #---------------------------[AutoLike-nya]---------------------------#
 def autolike():
-     for zx in range(0,100):
-        hasil = cl.activity(limit=100)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-          try:    
-            like_function = "ICAgICAgICAgICAgY2wubGlrZShoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWyd1c2VySW5mbyddWydtaWQnXSxoYXNpbFsncmVzdWx0J11bJ3Bvc3RzJ11benhdWydwb3N0SW5mbyddWydwb3N0SWQnXSxsaWtlVHlwZT0xMDAyKQogICAgICAgICAgICBjbC5jb21tZW50KGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3VzZXJJbmZvJ11bJ21pZCddLGhhc2lsWydyZXN1bHQnXVsncG9zdHMnXVt6eF1bJ3Bvc3RJbmZvJ11bJ3Bvc3RJZCddLCJBdXRvbGlrZSBCeSBGYXJ6YWluIC0gekZ6XG5cblN1YnNjcmliZSBDaGFubmVsIFNheWEgeWFrIGthbGF1IG1hdSBiaXNhIGtheWFrIGdpbmlcbmh0dHBzOi8veW91dHViZS5jb20vYy96Zno0OCIp"
-            exec(base64.b64decode(like_function))
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like By MKHADAFFY\nInstagram @mkhadaffy18\nMau Auto Like? https://youtu.be/VyervjxFN9g")
-            print "Like"
-          except:
-            pass
-        else:
-            print "Already Liked"
-     time.sleep(500)
+
+			for zx in range(0,20):
+
+				hasil = cl.activity(limit=20)
+
+				if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
+
+					try: 
+
+						cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+
+						cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like By line://ti/p/~yapuyy")
+
+						kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+
+						kk.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Channel Youtube : MHMMDKHADAFFY")
+
+						print "DiLike"
+
+					except:
+
+							pass
+
+				else:
+
+						print "Sudah DiLike"
+
+			time.sleep(500)
+
 thread2 = threading.Thread(target=autolike)
+
 thread2.daemon = True
+
 thread2.start()
+
+
 #---------------------------[AutoLike-nya]---------------------------#
 
 def NOTIFIED_READ_MESSAGE(op):
